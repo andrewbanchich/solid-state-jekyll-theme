@@ -2,7 +2,7 @@
 
 A Jekyll version of the "Solid State" theme by [HTML5 UP](https://html5up.net/).
 
-![alt text](images/solid-state.jpg "Solid State Theme")
+![Solid State Theme](images/solid-state.jpg "Solid State Theme")
 
 # How to Use
 
