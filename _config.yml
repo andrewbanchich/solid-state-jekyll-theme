@@ -28,5 +28,12 @@ twitter_url: https://twitter.com/andrewbanchich
 # build settings
 markdown: kramdown
 
+menus:
+  - Home: "/index.html"
+  - Generic: "/generic.html"
+  - Elements: "/elements.html"
+  - Log in: "#"
+  - Sign up: "#"
+
 sass:
   style: compressed
