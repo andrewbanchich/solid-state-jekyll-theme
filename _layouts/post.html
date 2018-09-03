@@ -5,8 +5,9 @@ layout: default
 <section id="wrapper">
   <header>
     <div class="inner">
+      <a href="{{ page.category | relative_url }}"><h6>{{ page.category }}</a>
       <h2>{{ page.title }}</h2>
-      <p>{{ page.description }} </p>
+      {{ page.date | date_to_string }}
     </div>
   </header>
   <!-- Content -->

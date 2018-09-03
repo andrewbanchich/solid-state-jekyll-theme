@@ -1,0 +1,16 @@
+{% assign features = site.pages | where:"featured",true | sort:"order" %}
+{% for feature in features %}
+{% assign is_alt = forloop.index | modulo:2 %}
+{% capture alt %}{% if is_alt == 0 %} alt{% endif %}{% endcapture %}
+<!-- feature-{{ forloop.index }} -->
+<section id="feature-{{ forloop.index }}" class="wrapper{{ alt }} spotlight style{{ forloop.index }}">
+  <div class="inner">
+    <a href="{{ feature.url | relative_url }}" class="image"><img src="{{ feature.image }}" alt="" /></a>
+    <div class="content">
+      <h2 class="major">{{ feature.title }}</h2>
+      <p>{{ feature.description }}</p>
+      <a href="{{ feature.url | relative_url }}" class="special">Learn more</a>
+    </div>
+  </div>
+</section>
+{% endfor %}
