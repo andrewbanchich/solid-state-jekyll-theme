@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<!-- Wrapper -->
+<section id="wrapper">
+  <header>
+    <div class="inner">
+      <a href="{{ page.category | relative_url }}"><h6>{{ page.category }}</a>
+      <h2>{{ page.title }}</h2>
+      {{ page.date | date_to_string }}
+    </div>
+  </header>
+  <!-- Content -->
+  <div class="wrapper">
+    <div class="inner">
+      {{ content }}
+    </div>
+  </div>
+</section>

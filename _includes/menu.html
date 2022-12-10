@@ -1,0 +1,14 @@
+<!-- Menu -->
+<nav id="menu">
+  <div class="inner">
+    <h2>Menu</h2>
+    <ul class="links">
+      {% for menu_hash in site.menus %}
+      {% for menu in menu_hash %}
+      <li><a href="{{ menu[1] }}">{{ menu[0] }}</a></li>
+      {% endfor %}
+      {% endfor %}
+    </ul>
+    <a href="#" class="close">Close</a>
+  </div>
+</nav>

@@ -1,0 +1,27 @@
+{% assign features = site.pages | where:"featured",true %}
+{% assign posts_bundles = site.pages | where:"layout","posts" | sort:"order" %}
+{% for posts in posts_bundles %}
+{% assign is_alt = forloop.index | plus: features.size | modulo:2 %}
+{% capture alt %}{% if is_alt == 0 %} alt{% endif %}{% endcapture %}
+<!-- Pinned Posts -->
+<section id="pinned-posts-{{ posts.category }}" class="wrapper{{ alt }} style{{ forloop.index | plus: features.size }}">
+  <div class="inner">
+    <a href="{{ posts.url | relative_url }}"><h2 class="major">{{ posts.title }}</h2></a>
+    <p>{{ posts.description }}</p>
+    <section class="features">
+      {% assign articles = site.posts | where:"category",posts.category | where:"pinned",true | sort:"order" %}
+      {% for article in articles %}
+      <article>
+        <a href="{{ article.url | relative_url }}" class="image"><img src="{{ article.image }}" alt="" /></a>
+        <h3 class="major">{{ article.title }}</h3>
+        <p>{{ article.description }}</p>
+        <a href="{{ article.url | relative_url }}" class="special">Learn more</a>
+      </article>
+      {% endfor %}
+    </section>
+    <ul class="actions">
+      <li><a href="{{ posts.url | relative_url }}" class="button">Browse All</a></li>
+    </ul>
+  </div>
+</section>
+{% endfor %}
